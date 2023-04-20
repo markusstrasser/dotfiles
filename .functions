@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#DOESN"T work with FISH terminal
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";

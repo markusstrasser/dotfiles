@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #USE FISH AS DEFAULT SHELL
-chsh -s /usr/local/bin/fish
+#chsh -s /path/to/fish user
 
 
 ###############################################################################
