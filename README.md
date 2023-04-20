@@ -1,4 +1,6 @@
 
+`/generators` are the scripts I run on my source machine. They produce the scripts to run on the target machine.
+
 
 To make Fish Default Shell
 
