@@ -24,6 +24,7 @@ PACKAGES=(
     ctop
     curl
     dex2jar
+    direnv
     dns2tcp
     docker
     entr
