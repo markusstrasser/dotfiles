@@ -1,56 +1,102 @@
-; I removed the [user] and [github] blocks on purpose so other people don't copy it by mistake
-; you will need to set these values later
-[apply]
-  whitespace = fix
-[color]
-  ui = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-[merge]
-  log = true
-[push]
-  ; "simple" avoid headaches, specially if you use `--force` w/o specifying branch
-  ; see: http://stackoverflow.com/questions/13148066/warning-push-default-is-unset-its-implicit-value-is-changing-in-git-2-0
-  default = simple
-[url "git://github.com/"]
-  insteadOf = "github:"
-[url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
-[core]
-  excludesfile = ~/.gitignore_global
-  ; setting the editor fixes git commit bug http://tooky.co.uk/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-  editor = /usr/bin/vim
 [alias]
-  ; show merge tree + commits info
-  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-  lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
-  ; basic logging for quick browsing
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
-  ; log + file diff
-  fl = log -u
-  ; find paths that matches the string
-  f = "!git ls-files | grep -i"
-  ; delete all merged branches
-  ; dm = !git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
-  ; shortcuts
-  cp = cherry-pick
-  st = status -s
-  cl = clone
-  ci = commit
-  co = checkout
-  br = branch
-  dc = diff --cached
+	# List of commonly used aliases
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset'
+	lg2 = log --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit --date=relative
+	df = diff
+	dc = diff --cached
+	amend = commit --amend --no-edit
+	undo = reset HEAD^
+	branches = branch -a
+	unstage = reset HEAD --
+    s = !git status --short --branch
+
+[color]
+	# Enable color output
+	ui = true
+
+[core]
+	# Set default text editor and merge tool
+	editor = code --wait
+	mergeTool = code --wait
+	# Set Git to rebase instead of merge by default
+	autorebase = true
+	# Configure Git to handle line endings correctly for your OS
+	autocrlf = input
+	# Set the default Gitignore file
+	excludesfile = ~/.gitignore_global
+
+[push]
+	# Set the default push behavior to only push the current branch
+	default = simple
+
+[pull]
+	# Set the default pull behavior to only pull the current branch
+	default = simple
+
+[diff]
+	# Set default diff tool and prompt for each file change
+	tool = code --wait --diff
+	prompt = true
+
+[credential]
+	# Use the macOS Keychain to store Git credentials
+	helper = osxkeychain
+
+[merge]
+	# Configure merge behavior to use the built-in Git merge driver
+	tool = built-in
+
+[rebase]
+	# Configure rebase behavior to preserve merge commits
+	preserveMerge = true
+
+# Set the default GPG key
+[user]
+	signingkey = ABC123456DEF
+
+# Set the default pager for log output
+[core]
+	pager = less -F -X
+
+# Enable auto-correct for Git commands
+[help]
+	autocorrect = 1
+
+# Set the default number of concurrent fetches
+[fetch]
+	jobs = 8
+
+# Set the default number of threads for Git commands
+[core]
+	threads = 4
+
+# Set the default behavior for `git push`
+[push]
+	default = simple
+
+# Set the default behavior for `git pull`
+[pull]
+	default = simple
+
+# Set the default behavior for `git clone`
+[clone]
+	depth = 1
+
+# Automatically show diffs in color
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+
+# Set the default format for `git log`
+[log]
+	decorate = auto
+	graph = auto
+	abbrevCommit = true
+	date = relative
