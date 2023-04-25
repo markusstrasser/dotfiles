@@ -7,29 +7,35 @@ fi
 
 # Update Homebrew
 brew update
+brew upgrade
 
 APPS=(
     1password
     brave-browser
     cheatsheet
-    cold-turkey-blocker
+    cleanshot
+    cleanmymac
+    daisydisk
     deluge
-    docker
+#   docker
     expressvpn
-    firefox
+#   firefox
     gpg-suite
     google-chrome
+    httpie
     iterm2
     postman
     raycast
     readdle-spark
+#   roam-research #--not using this anymore
     signal
     skype
     sensiblesidebuttons
     spotify
     telegram
-    the-unarchiver
+#   the-unarchiver
     tor-browser
+    transmit
     typora
     visual-studio-code
     vlc
@@ -40,32 +46,6 @@ for app in "${APPS[@]}"; do
     brew install --cask "$app" || true
 done
 
-FONTS=(
-    font-anonymous-pro
-    font-arial
-    font-dejavu-sans-mono
-    font-fira-code
-    font-hack
-    font-inconsolata
-    font-jetbrains-mono
-    font-lato
-    font-liberation-mono
-    font-liberation-sans
-    font-liberation-serif
-    font-merriweather
-    font-meslo-lg
-    font-montserrat
-    font-noto-sans
-    font-noto-serif
-    font-opensans
-    font-roboto
-    font-roboto-mono
-    font-source-code-pro
-    font-times-new-roman
-)
-
-for font in "${FONTS[@]}"; do
-    brew install --cask "$font" || true
-done
+brew cleanup
 
 echo "Installation complete!"

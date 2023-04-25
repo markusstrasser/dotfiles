@@ -48,8 +48,10 @@ PACKAGES=(
     gs
     gzip
     hashpump
+    handbrake
     htop
     http-server
+    httpie
     hub
     hydra
     icdiff
