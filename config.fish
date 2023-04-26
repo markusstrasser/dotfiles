@@ -6,7 +6,7 @@ set -U fish_color_scheme default
 # Environment Variables
 set -Ux PATH /opt/homebrew/anaconda3/bin /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin /opt/homebrew/bin $HOME/.local/bin /opt/homebrew/Cellar/openjdk/19.0.2 $HOME/.pyenv/shims $PATH
 set -Ux JAVA_HOME /opt/homebrew/Cellar/openjdk/19.0.2
-set -Ux GROBID_HOME /Users/markus/Projects/grobid/grobid-home
+set -Ux GROBID_HOME /Users/alien/Projects/grobid/grobid-home
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -Ux PATH $PYENV_ROOT/bin $PATH
 

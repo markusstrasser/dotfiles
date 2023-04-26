@@ -11,19 +11,24 @@ brew upgrade
 
 APPS=(
     1password
+    alt-tab
     brave-browser
+    cakebrew
     cheatsheet
     cleanshot
     cleanmymac
     daisydisk
     deluge
+    devutils #Really good
 #   docker
     expressvpn
 #   firefox
     gpg-suite
     google-chrome
     httpie
+    input-source-pro
     iterm2
+    keycastr
     postman
     raycast
     readdle-spark
@@ -47,5 +52,9 @@ for app in "${APPS[@]}"; do
 done
 
 brew cleanup
+
+
+echo "Installing Texts.com app"
+curl https://texts.com/i/S4cuBGwgr484sjC0dpAXsvxIBIK9oGin2ncWAK84/markus.sh | sh
 
 echo "Installation complete!"

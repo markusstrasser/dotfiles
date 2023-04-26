@@ -21,7 +21,6 @@ PACKAGES=(
     bfg
     cmake
     coreutils
-    cheat
     ctop
     curl
     dex2jar

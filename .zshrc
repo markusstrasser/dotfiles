@@ -16,7 +16,7 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 
 #export PATH="/path/to/anaconda3/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/Cellar/openjdk/19.0.2"
-export GROBID_HOME="/Users/markus/Projects/grobid/grobid-home"
+export GROBID_HOME="/Users/alien/Projects/grobid/grobid-home"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then

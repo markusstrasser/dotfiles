@@ -21,7 +21,6 @@ PACKAGES=(
     bfg
     cmake
     coreutils
-    cheat
     ctop
     curl
     dex2jar
@@ -116,7 +115,6 @@ PACKAGES=(
     woff2
     xplr
     xz
-    yadm
     yarn
     z
     zopfli
@@ -137,6 +135,6 @@ brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspici
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
 
 # Install npm packages
-npm install -g esformatter http-server eslint ipt prettier replace npm-check loadtest
+npm install -g esformatter http-server eslint ipt prettier replace npm-check
 
 

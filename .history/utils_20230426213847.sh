@@ -21,7 +21,6 @@ PACKAGES=(
     bfg
     cmake
     coreutils
-    cheat
     ctop
     curl
     dex2jar
@@ -116,8 +115,8 @@ PACKAGES=(
     woff2
     xplr
     xz
-    yadm
     yarn
+    yadm
     z
     zopfli
 )
