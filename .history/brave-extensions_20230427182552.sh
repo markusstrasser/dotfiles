@@ -28,13 +28,11 @@ extensions=(
 
 
 # Dynamically locate the Brave browser executable
-# Define the path to the Brave browser executable on macOS
-# Define the path to the Brave browser executable on macOS
-brave_executable="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+brave_executable="$(command -v brave || which brave)"
 
-# Check if the Brave browser executable exists
-if [[ ! -x "$brave_executable" ]]; then
-    echo "Brave browser not found at $brave_executable. Please ensure it is installed."
+# Check if the Brave browser executable was found
+if [[ -z "$brave_executable" ]]; then
+    echo "Brave browser not found. Please ensure it is installed and available in your PATH."
     exit 1
 fi
 
@@ -42,3 +40,4 @@ fi
 for ext_id in "${extensions[@]}"; do
     "$brave_executable" "https://chrome.google.com/webstore/detail/$ext_id"
 done
+
