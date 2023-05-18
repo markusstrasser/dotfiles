@@ -1,3 +1,5 @@
+source --no-execute .envrc
+
 # Universal Variables
 set -U fish_user_paths /opt/homebrew/bin /usr/local/bin $fish_user_paths
 set -U EDITOR "code"
@@ -60,6 +62,7 @@ set -g fish_color_search_match 'bryellow'
 # Direnv hook
 eval "$(direnv hook fish)"
 
+direnv allow
 # Pyenv initialization
 if command -v pyenv 1>/dev/null 2>&1
     pyenv init --path | source
